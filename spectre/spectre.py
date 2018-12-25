@@ -14,7 +14,7 @@ SPECTRE = SPECTRE_DEFAULTS.copy()
 SPECTRE.update(getattr(settings, "SPECTRE", {}))
 
 
-def get_bootstrap_setting(setting, default=None):
+def get_spectre_setting(setting, default=None):
     """
     read settings
     :param setting:
@@ -25,4 +25,5 @@ def get_bootstrap_setting(setting, default=None):
 
 
 def css_url():
-    return get_bootstrap_setting("css_url")
+    return get_spectre_setting("css_url")
+

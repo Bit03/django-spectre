@@ -2,9 +2,13 @@
 <html {% if LANGUAGE_CODE %} lang="{{ LANGUAGE_CODE }}"{% endif %}>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge" /><![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block spectre_title %}django-spectre title{% endblock %}</title>
 </head>
 <body>
+
+{% block spectre_content %}django-spectre content{% endblock %}
 
 </body>
 </html>
