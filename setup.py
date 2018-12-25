@@ -20,7 +20,7 @@ setup(
     long_description=readme,
     author="jiaxin",
     author_email="edison7500@gmail.com",
-    packages=["bootstrap3"],
+    packages=["spectre"],
     include_package_data=True,
     license="MIT LICENSE",
     zip_safe=False,
