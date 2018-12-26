@@ -39,8 +39,10 @@ def spectre_url_replace_param(url, name, value):
 
 
 @register.inclusion_tag("spectre/avatar.html")
-def spectre_avatar(avatar):
-    pass
+def spectre_avatar(avatar, **kwargs):
+    avatar_kwargs = kwargs.copy()
+    avatar_kwargs['avatar_url'] = avatar
+    return avatar_kwargs
 
 
 @register.inclusion_tag("spectre/pagination.html")
