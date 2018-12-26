@@ -19,7 +19,7 @@ python setup.py install
 
 
 ## Usage
-add spectre package into INSTALL_APPS in settings.py
+Add to INSTALL_APPS in your settings.py
 ```.python
 INSTALLED_APPS = [
     ...
