@@ -1,0 +1,36 @@
+{% load spectre_tags %}
+
+
+<ul class="{{ pagination_css_classes }}">
+
+    {% if current_page == 1 %}
+        <li class="page-item disabled"><a>&laquo;</a></li>
+    {% else %}
+        <li class="page-item">
+            <a href="{% bootstrap_url_replace_param bpurl parameter_name 1 %}">&laquo;</a>
+        </li>
+    {% endif %}
+
+    {% for p in pages_shown %}
+        {% if current_page == p %}
+            <li class="page-item active">
+                <a>{{ p }}</a>
+            </li>
+        {% else %}
+            <li class="page-item">
+{#                <a href="{% bootstrap_url_replace_param bpurl parameter_name p %}">{{ p }}</a>#}
+            </li>
+        {% endif %}
+    {% endfor %}
+
+
+    {% if current_page == num_pages %}
+        <li class="page-item disabled">
+            <a>&raquo;</a>
+        </li>
+    {% else %}
+        <li class="page-item">
+            <a href="{% bootstrap_url_replace_param bpurl parameter_name num_pages %}">&raquo;</a>
+        </li>
+    {% endif %}
+</ul>

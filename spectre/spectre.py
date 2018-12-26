@@ -4,7 +4,6 @@ SPECTRE_DEFAULTS = {
     "css_url": {
         "url": "https://unpkg.com/spectre.css/dist/spectre.min.css"
     },
-
 }
 
 # Start with a copy of default settings
