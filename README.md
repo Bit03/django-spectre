@@ -40,4 +40,14 @@ SPECTRE_DEFAULTS = {
 
 
 ## Usage
-coming soon
+
+1. spectre avatar
+
+    add spectre tags in your django template  
+    
+    ```.html
+        {% load spectre_tags %}
+        
+        {% spectre_avatar '<avatar_url>' '<size>' %}
+
+    ``` 
