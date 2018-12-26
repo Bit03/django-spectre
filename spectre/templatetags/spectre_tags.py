@@ -5,7 +5,10 @@ from django import template
 from django.utils.encoding import force_text
 from django.utils.safestring import mark_safe
 
-from spectre.utils import render_link_tag
+from ..utils import (
+    render_link_tag,
+    url_replace_param
+)
 from ..spectre import (
     css_url,
     get_spectre_setting,
@@ -30,6 +33,11 @@ def spectre_css():
     return mark_safe("".join([url for url in rendered_urls]))
 
 
+@register.simple_tag
+def spectre_url_replace_param(url, name, value):
+    return url_replace_param(url, name, value)
+
+
 @register.inclusion_tag("bootstrap3/pagination.html")
 def spectre_pagination(page, **kwargs):
     pagination_kwargs = kwargs.copy()
@@ -38,7 +46,7 @@ def spectre_pagination(page, **kwargs):
 
 
 def get_pagination_context(
-        page, pages_to_show=11, url=None, size=None, extra=None, parameter_name="page"
+        page, pages_to_show=11, url=None, extra=None, parameter_name="page"
 ):
     """
     Generate Bootstrap pagination context from a page object
