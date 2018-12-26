@@ -11,14 +11,14 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-import sys
+# import sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SPECTRE_FOLDER = os.path.abspath(os.path.join(BASE_DIR, "..", "spectre"))
-if SPECTRE_FOLDER not in sys.path:
-    sys.path.insert(0, SPECTRE_FOLDER)
+# SPECTRE_FOLDER = os.path.abspath(os.path.join(BASE_DIR, "..", "spectre"))
+# if SPECTRE_FOLDER not in sys.path:
+#     sys.path.insert(0, SPECTRE_FOLDER)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -63,10 +63,13 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+                "django.contrib.auth.context_processors.auth",
+                "django.template.context_processors.debug",
+                "django.template.context_processors.i18n",
+                "django.template.context_processors.media",
+                "django.template.context_processors.static",
+                "django.template.context_processors.tz",
+                "django.contrib.messages.context_processors.messages",
             ],
         },
     },

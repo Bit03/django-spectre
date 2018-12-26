@@ -22,7 +22,7 @@ setup(
     author_email="edison7500@gmail.com",
     packages=["spectre"],
     include_package_data=True,
-    license="MIT LICENSE",
+    license="The MIT License (MIT)",
     zip_safe=False,
     keywords="django-spectre",
     classifiers=[
