@@ -49,7 +49,7 @@ def get_pagination_context(
         page, pages_to_show=11, url=None, extra=None, parameter_name="page"
 ):
     """
-    Generate Bootstrap pagination context from a page object
+    Generate Spectre pagination context from a page object
     """
     pages_to_show = int(pages_to_show)
     if pages_to_show < 1:
