@@ -1,4 +1,5 @@
 # django-spectre
+![https://picturepan2.github.io/spectre/img/spectre-logo.svg](https://picturepan2.github.io/spectre/img/spectre-logo.svg)
 
 ## Overview 
 
