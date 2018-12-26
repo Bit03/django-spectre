@@ -18,15 +18,26 @@ python setup.py install
 ```
 
 
-## Usage
+## Configuration
 Add to INSTALL_APPS in your settings.py
 ```.python
 INSTALLED_APPS = [
     ...
     'spectre',
 ]
+
+
+# spectre config
+#
+# -------------------------------------------------
+SPECTRE_DEFAULTS = {
+    "css_url": {
+        "url": "https://unpkg.com/spectre.css/dist/spectre.min.css"
+    },
+}
+
 ```
 
 
-## Config
+## Usage
 coming soon
