@@ -43,6 +43,8 @@ def spectre_avatar(avatar, size="sm", **kwargs):
     avatar_kwargs = kwargs.copy()
     avatar_kwargs['avatar_url'] = avatar
     avatar_kwargs['size'] = size
+    if "background" not in avatar_kwargs.keys():
+        avatar_kwargs['background'] = "#5755d9"
     return avatar_kwargs
 
 
