@@ -34,6 +34,7 @@ def spectre_css():
 def spectre_pagination(page, **kwargs):
     pagination_kwargs = kwargs.copy()
     pagination_kwargs["page"] = page
+    return get_pagination_context(**pagination_kwargs)
 
 
 def get_pagination_context(
@@ -103,11 +104,7 @@ def get_pagination_context(
         url = url.replace("?&", "?")
     # Set CSS classes, see https://picturepan2.github.io/spectre/components/pagination.html
     pagination_css_classes = ["pagination"]
-    # if size == "small":
-    #     pagination_css_classes.append("pagination-sm")
-    # elif size == "large":
-    #     pagination_css_classes.append("pagination-lg")
-        # Build context object
+    # Build context object
     return {
         "spectre_pagination_url": url,
         "num_pages": num_pages,
