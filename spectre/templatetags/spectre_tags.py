@@ -38,7 +38,12 @@ def spectre_url_replace_param(url, name, value):
     return url_replace_param(url, name, value)
 
 
-@register.inclusion_tag("bootstrap3/pagination.html")
+@register.inclusion_tag("spectre/avatar.html")
+def spectre_avatar(avatar):
+    pass
+
+
+@register.inclusion_tag("spectre/pagination.html")
 def spectre_pagination(page, **kwargs):
     pagination_kwargs = kwargs.copy()
     pagination_kwargs["page"] = page
