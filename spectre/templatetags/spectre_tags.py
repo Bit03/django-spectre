@@ -40,6 +40,13 @@ def spectre_url_replace_param(url, name, value):
 
 @register.inclusion_tag("spectre/avatar.html")
 def spectre_avatar(avatar, size="sm", **kwargs):
+    """
+    render avatar
+    :param avatar:
+    :param size:
+    :param kwargs:
+    :return: HTML
+    """
     avatar_kwargs = kwargs.copy()
     avatar_kwargs['avatar_url'] = avatar
     avatar_kwargs['size'] = size

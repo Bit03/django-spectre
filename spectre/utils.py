@@ -66,7 +66,6 @@ def url_to_attrs_dict(url, url_attr):
     return result
 
 
-
 def url_replace_param(url, name, value):
     """
     Replace a GET parameter in an URL

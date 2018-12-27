@@ -1,0 +1,10 @@
+{% extends 'spectre/spectre.html' %}
+{% load spectre_tags %}
+
+
+{% block spectre_content %}
+
+    <form method="post" class="form-horizontal"> {% csrf_token %}
+        {{ form }}
+    </form>
+{% endblock %}

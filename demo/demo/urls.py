@@ -15,12 +15,22 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.contrib.auth import views as auth_views
 
 from apps.views import DemoView
-
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
 
     url(r'^demo/?$', DemoView.as_view(), name='demo'),
+
+]
+
+
+# django auth
+#
+#
+urlpatterns += [
+    url(r'^accounts/login/$',
+        auth_views.LoginView.as_view(), name='login'),
 ]
