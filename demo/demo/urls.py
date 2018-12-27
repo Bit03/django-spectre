@@ -33,4 +33,6 @@ urlpatterns = [
 urlpatterns += [
     url(r'^accounts/login/$',
         auth_views.LoginView.as_view(), name='login'),
+    # url(r'accounts/reg', auth_views.SI)
+
 ]
