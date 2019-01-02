@@ -18,6 +18,7 @@ from django.contrib import admin
 from django.contrib.auth import views as auth_views
 
 from apps.views import DemoView
+from apps.forms import AuthenticationForm
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
@@ -32,7 +33,7 @@ urlpatterns = [
 #
 urlpatterns += [
     url(r'^accounts/login/$',
-        auth_views.LoginView.as_view(), name='login'),
+        auth_views.LoginView.as_view(form_class=AuthenticationForm), name='login'),
     # url(r'accounts/reg', auth_views.SI)
 
 ]
