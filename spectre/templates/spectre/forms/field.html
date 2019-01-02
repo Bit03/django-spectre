@@ -1,6 +1,8 @@
 {% load spectre_tags %}
 
 <div class="form-group">
-    <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
-    {{ field|addclass:"form-input" }}
+    {% if field|is_input %}
+        <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+        {{ field|addclass:"form-input" }}
+    {% endif %}
 </div>

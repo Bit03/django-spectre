@@ -3,6 +3,7 @@ import re
 from math import floor
 
 from django import template
+from django import forms
 from django.template.loader import get_template
 from django.utils.encoding import force_text
 from django.utils.safestring import mark_safe
@@ -39,6 +40,16 @@ def addclass(field, css_class):
     #     css_class += ' is-danger'
     return field.as_widget(attrs={"class": css_class})
 
+
+@register.filter
+def is_input(field):
+    return isinstance(field.field.widget, (
+        forms.TextInput,
+        forms.NumberInput,
+        forms.EmailInput,
+        forms.PasswordInput,
+        forms.URLInput
+    ))
 
 
 @register.filter
