@@ -9,6 +9,8 @@
             <div class="column col-4 col-mx-auto">
                 <form method="post" class="form-horizontal"> {% csrf_token %}
                     {{ form|spectre_form }}
+
+                    <button class="btn btn-primary" type="submit">login</button>
                 </form>
             </div>
         </div>
