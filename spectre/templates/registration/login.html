@@ -4,7 +4,13 @@
 
 {% block spectre_content %}
 
-    <form method="post" class="form-horizontal"> {% csrf_token %}
-        {{ form }}
-    </form>
+    <div class="container">
+        <div class="columns">
+            <div class="column col-4 col-mx-auto">
+                <form method="post" class="form-horizontal"> {% csrf_token %}
+                    {{ form|spectre_form }}
+                </form>
+            </div>
+        </div>
+    </div>
 {% endblock %}

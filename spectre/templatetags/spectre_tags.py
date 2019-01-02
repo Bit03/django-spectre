@@ -1,7 +1,9 @@
+import logging
 import re
 from math import floor
 
 from django import template
+from django.template.loader import get_template
 from django.utils.encoding import force_text
 from django.utils.safestring import mark_safe
 
@@ -15,6 +17,28 @@ from ..spectre import (
 )
 
 register = template.Library()
+logger = logging.getLogger('spectre')
+
+
+def render(element, markup_classes):
+    _template = get_template("spectre/forms/form.html")
+    logger.info(element)
+
+    context = {
+        # 'field': element,
+        'classes': markup_classes,
+        'form': element,
+    }
+
+    return _template.render(context)
+
+
+@register.filter
+def addclass(field, css_class):
+    # if len(field.errors) > 0:
+    #     css_class += ' is-danger'
+    return field.as_widget(attrs={"class": css_class})
+
 
 
 @register.filter
@@ -22,12 +46,18 @@ def spectre_setting(value):
     return get_spectre_setting(value)
 
 
+@register.filter
+def spectre_form(element):
+    markup_classes = {'label': '', 'value': '', 'single_value': ''}
+    return render(element, markup_classes)
+
+
 @register.simple_tag
 def spectre_css_url():
     return css_url()
 
 
-@register.simple_tag()
+@register.simple_tag
 def spectre_css():
     rendered_urls = [render_link_tag(spectre_css_url())]
     return mark_safe("".join([url for url in rendered_urls]))
