@@ -7,7 +7,7 @@
         <li class="page-item disabled"><a>&laquo;</a></li>
     {% else %}
         <li class="page-item">
-            <a href="{% bootstrap_url_replace_param bpurl parameter_name 1 %}">&laquo;</a>
+            <a href="{% spectre_url_replace_param bpurl parameter_name 1 %}">&laquo;</a>
         </li>
     {% endif %}
 
@@ -18,7 +18,7 @@
             </li>
         {% else %}
             <li class="page-item">
-{#                <a href="{% bootstrap_url_replace_param bpurl parameter_name p %}">{{ p }}</a>#}
+                <a href="{% spectre_url_replace_param bpurl parameter_name p %}">{{ p }}</a>
             </li>
         {% endif %}
     {% endfor %}
@@ -30,7 +30,7 @@
         </li>
     {% else %}
         <li class="page-item">
-            <a href="{% bootstrap_url_replace_param bpurl parameter_name num_pages %}">&raquo;</a>
+            <a href="{% spectre_url_replace_param bpurl parameter_name num_pages %}">&raquo;</a>
         </li>
     {% endif %}
 </ul>
