@@ -4,5 +4,11 @@
     {% if field|is_input %}
         <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
         {{ field|addclass:"form-input" }}
+
+    {% elif field|is_radio %}
+        <label class="form-label">{{ field.label }}</label>
+        <label class="form-radio">
+            {{ field }}
+        </label>
     {% endif %}
 </div>
