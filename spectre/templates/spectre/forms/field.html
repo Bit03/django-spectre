@@ -17,7 +17,7 @@
         </div>
     {% elif field|is_checkbox %}
         <div class="form-group">
-            <label class="form-checkbox">
+            <label class="form-checkbox" for="{{ field.id_for_label }}">
                 {{ field }}
                 <i class="form-icon"></i> {{ field.label }}
             </label>
