@@ -15,5 +15,12 @@
             <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
             {{ field }}
         </div>
+    {% elif field|is_checkbox %}
+        <div class="form-group">
+            <label class="form-checkbox">
+            <input type="checkbox">
+                <i class="form-icon"></i> {{ field.label }}
+            </label>
+        </div>
     {% endif %}
 </div>

@@ -13,3 +13,8 @@ class AuthenticationForm(djAuthForm):
         strip=False,
         widget=forms.PasswordInput(attrs={"placeholder": _("Password")}),
     )
+
+    remember_me = forms.ChoiceField(
+        label=_("Remember Me"),
+        widget=forms.CheckboxInput(),
+    )
