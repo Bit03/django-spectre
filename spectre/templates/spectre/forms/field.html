@@ -10,5 +10,10 @@
         <label class="form-radio">
             {{ field }}
         </label>
+    {% elif field|is_select %}
+        <div class="form-group">
+            <label class="form-label" for="{{ field.id_for_label }}">{{ field.label }}</label>
+            {{ field }}
+        </div>
     {% endif %}
 </div>

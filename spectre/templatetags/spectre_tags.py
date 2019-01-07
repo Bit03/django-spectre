@@ -53,6 +53,11 @@ def is_input(field):
 
 
 @register.filter
+def is_select(field):
+    return isinstance(field.field.widget, forms.Select)
+
+
+@register.filter
 def is_checkbox(field):
     return isinstance(field.field.widget, forms.CheckboxInput)
 
